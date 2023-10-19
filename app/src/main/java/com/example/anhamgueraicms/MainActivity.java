@@ -2,6 +2,7 @@ package com.example.anhamgueraicms;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         mTextViewTotal = findViewById(R.id.textViewTotal);
     }
 
+    @SuppressLint({"DefaultLocale", "SetTextI18n"})
     public void calcular(View view) {
         String estado = mEditTextEstado.getText().toString();
 
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         float total = (valor * porcentagem / 100);
-        mTextViewPorcentagem.setText(String.valueOf(porcentagem) + "%");
+        mTextViewPorcentagem.setText(porcentagem + "%");
         mTextViewTotal.setText(String.format("R$ %.2f", total));
     }
 }
